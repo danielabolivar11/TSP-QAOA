@@ -29,6 +29,13 @@ app = FastAPI(title="QCFlows API", version="0.1.0")
 app.include_router(demo_router)
 app.include_router(qasm_router)
 
+from qcflows_api.tsp.routes import router as tsp_router
+
+app = FastAPI(title="QCFlows API", version="0.1.0")
+
+app.include_router(demo_router)
+app.include_router(qasm_router)
+app.include_router(tsp_router)
 
 app.add_middleware(
     CORSMiddleware,
